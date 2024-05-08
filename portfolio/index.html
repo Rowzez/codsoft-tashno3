@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/0db5d9a58c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <div class="navbar">
+                <nav>
+                    <p id="heading">About<span style="color: yellow;">Me.</span></p>
+                    <ul id="sidemenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <i class="fa fa-times" onclick="closeMenu()""></i>
+                    </ul>
+                    <i class="fa fa-bars" onclick="openMenu()"></i>
+                </nav>
+            </div>
+            <div id="headertext">
+                <div>
+                    <p style="color: yellow;font-size: 20px; margin-top: 40%;">Hello, welcome</p>
+                    <h1>I'm Rose Ongili</h1>
+                    <p>JavaScript Developer</p>
+                </div>
+                <div>
+                    <img src="images/mephoto.jpg" id="mephoto">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!----------------About--------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                
+                <div class="aboutcol1">
+                    <img src="images/jsphoto.jpg" alt="">
+                </div>
+                <div class="aboutcol2">
+                    <h1 id="subtitle">About<span style="color: yellow;">Me</span></h1>
+                    <p>Currently a 3rd year student pursuing Computer Science in Dedan Kimathi University of Technology. Objective- driven and detailed-oriented student passionate about JavaScript development. Eager to apply theoretical knowledge gained from coursework to real-world projects, while continuously enhancing skills through hands-on experience and self directed learning.</p>
+                    <div class="tabtitles">
+                        <p class="tablinks active-link" onclick = "opentab('skills')">Skills</p>
+                        <p class="tablinks" onclick = "opentab('education')">Education</p>
+                    </div>
+                    <div class="tabcontents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Development</span><br>Building and designing websites</li>
+                            <li><span>JavaScript Development</span><br>Enhancing Interactivity of webpages</li>
+                            <li><span>UI/UX</span>Designing Web/App Interfaces</li>
+                        </ul>
+                    </div>
+                    <div class="tabcontents" id="education">
+                        <ul>
+                            <li><span>2024</span><br>Edx Web Development</li>
+                            <li><span>2022</span><br>Bsc Computer Science <br>from DeKUT Kenya</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-----------------------services------------------->
+
+<div id="services">
+    <div class="container">
+        <h1 id="subtitle">My<span style="color: yellow;">Services</span></h1>
+        <div class="serviceslist">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Development</h2>
+                <p>Creating and Designing Web Pages</p>
+                <a href="https://en.wikipedia.org/wiki/Web_development">learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-js"></i>
+                <h2>JavaScript Development</h2>
+                <p>Enhancing Interactivity of Websites</p>
+                <a href="https://en.wikipedia.org/wiki/JavaScript">learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--------------------------Portfolio-------------->
+<div id="portfolio">
+    <div class="container">
+        <h1 id="subtitle">My <span style="color: yellow;">Work</span></h1>
+        <div class="portfolio-list">
+            <div class="work">
+                <img src="images/digital clock.png" alt="">
+                <div class="layout">
+                    <h3>Digital clock</h3>
+                    <p>A digital clock showing current time</p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/to do list.png" alt="">
+                <div class="layout">
+                    <h3>To do list</h3>
+                    <p>To do list app to help in management of time</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------Contact----------------------->
+<div id="contact">
+    <div class="container">
+        <h1 id="subtititle">Contact<span style="color: yellow;">Me</span></h1>
+        <div class="contact-list">
+            <div class="contactleft">
+            <p> <i class="fa-regular fa-envelope"></i><span style="color: yellow;">Email</span> - ongiliirose@gmail.com</p>
+            <p> <i class="fa fa-mobile" aria-hidden="true"></i><span style="color: yellow;">Contact</span> - +254707327075</p>
+            </div>
+            <div class="contactright">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copy-right">
+        <p>&copy; Rose Ongili</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwRLHh3cA_Sc2xtj8O7BBm_NJ5XouzGhOrql907JsR1bS2xsdwRUgfsady89YuGQ4mg2A/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully";
+            setTimeout(function(){msg.innerHTML = ""},5000)
+            form.reset();
+            })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>

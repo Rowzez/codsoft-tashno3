@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background:  hsl(211, 97%, 26%);
+    color: white;
+    font-family: 'Montserrat';
+}
+
+.container{
+    padding: 10px 10%;
+}
+.navbar{
+    background-color: hsl(211, 85%, 20%);
+    width: 100;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#heading{
+    font-size: 30px;
+    font-weight: 700;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width:0;
+    height: 3px;
+    background:  hsl(211, 85%, 20%);
+    position: absolute;
+    left: 0%;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+#headertext{
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+#headertext h1{
+    font-size: 60px;
+    margin-top: 5%;
+}
+#mephoto{
+    height: 500px;
+    margin-top: 10%;
+    border-radius: 15px;
+    box-shadow: 10px 10px yellow;
+}
+
+
+/*-------------- about------------------- */
+#about{
+    padding: 120px 0;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.aboutcol1{
+    flex-basis: 35%;
+}
+.aboutcol1 img{
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 10px 10px yellow;
+}
+.aboutcol2{
+    flex-basis: 60%;
+}
+#subtitle{
+    font-size: 30px;
+}
+.tabtitles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tablinks{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tablinks::after{
+    content: '';
+    width:0;
+    height: 3px;
+    background:  hsl(211, 85%, 20%);
+    position: absolute;
+    left: 0%;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tablinks.active-link::after{
+    width: 70px;
+}
+.tabcontents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tabcontents ul li span{
+    color: yellow;
+    font-size: 14px;
+}
+.tabcontents{
+    display: none;
+}
+.tabcontents.active-tab{
+    display: block;
+}
+
+/*-------------services-----------*/
+#services{
+    padding: 30px 0;
+}
+.serviceslist{
+    display: flex;
+    justify-content: space-between;
+}
+.serviceslist div{
+    background: hsl(211, 85%, 20%);
+    flex-basis: 45%;
+    padding: 40px;
+    font-size: 15px;
+    font-weight: 300;
+    border-radius: 10px;
+    margin-top: 30px;
+    transition: background 0.5s, transform 0.5s;
+}
+.serviceslist div:hover{
+    background: #0c022d;
+    transform: translateY(-10px);
+}
+.serviceslist div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: yellow;
+}
+.serviceslist div h2{
+    color: yellow;
+}
+.serviceslist div a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+}
+.serviceslist div a:hover{
+    cursor: pointer;
+    color: #e1c821;
+}
+
+/*--------------portfolio-----------*/
+#portfolio{
+    padding: 50px 0;
+}
+.portfolio-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layout{
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(rgba(0,0,0,0.15), #b75676);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    transition: height 0.5s;
+}
+.layout h3{
+    font-weight: 300px;
+    margin-bottom: 20px;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layout{
+    height: 100%;
+}
+/*--------------------contact--------------*/
+.contact-list i{
+    font-size: 30px;
+    margin: 10px 10px;
+}
+.contact-list{
+    display: flex;
+    justify-content: space-between;
+}
+.contact-list div{
+    flex-basis: 35%;
+}
+.btn2{
+    height: 60px;
+    width: 200px;
+    font-size: 22px;
+    background:  hsl(211, 85%, 20%) ;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 14px 60px;
+    margin: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+.contactright form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px;
+    color: #fff;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+.copy-right{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    font-weight: 300;
+    margin-top: 10px;
+}
+/*------------------css for small screens----------*/
+nav .fa{
+    display: none;
+}
+
+
+@media only screen and (max-width: 600px){
+    .headertext{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .headertext h1{
+        font-size: 30px;
+    }
+    nav .fa{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background-color: hsl(211, 85%, 20%) ;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right(0.5s);
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fa{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    #subtitle{
+        font-size: 40px;
+    }
+    .aboutcol1, .aboutcol2{
+        flex-basis: 100%;
+    }
+    .aboutcol1{
+        margin-bottom: 20px;
+    }
+    .aboutcol2{
+        font-size: 14px;
+    }
+    .tablinks{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contactleft, contactright{
+        flex-basis: 100%;
+    }
+}
+#msg{
+    color: #a7b756;
+    margin-top: -40px;
+    display: block;
+}
